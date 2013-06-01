@@ -31,6 +31,7 @@ public class Model {
 		    boolean found = false;
 		    for (ArrayList<String> subset : synonymSet){
 		    	if (checkSynonym(subset.get(0), element)) {
+		    		System.out.println(subset.get(0)+" i "+element+" s¹ synonimami!");
 		    		found = true; 
 		    		subset.add(element);
 		    		break;
@@ -51,7 +52,8 @@ public class Model {
 		connection.open();
 		w1 = w1.replace("\'", "\'\'");
 		w2 = w2.replace("\'", "\'\'");
-		boolean result = (connection.executeQueryAsString("SELECT ARE_SYNONYMS(\'film\',\'movie\')")).equals("TRUE") ? true : false;
+		boolean result = (connection.executeQueryAsString("SELECT ARE_SYNONYMS(\'"+w1+"\',\'"+w2+"\')")).equals("TRUE") ? true : false;
+	
 		connection.close();
 		return result;
 	}
