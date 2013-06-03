@@ -1,3 +1,5 @@
+*.class
+bin/*
 .idea
 .idea/*
 target
