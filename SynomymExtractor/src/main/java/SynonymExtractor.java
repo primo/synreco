@@ -23,7 +23,7 @@ public class SynonymExtractor {
 	 */
 	public static void main(String[] args) {
 		
-		String text = "The Vikings (from Old Norse víkingr) were seafaring north Germanic people who raided, " +
+		String text = "The Vikings (from Old Norse vikingr) were seafaring north Germanic people who raided, " +
 				"traded, explored, and settled in wide areas of Europe, Asia, and the North Atlantic islands from the " +
 				"late 8th to the mid-11th centuries. The Vikings employed wooden longships with wide, shallow-draft " +
 				"hulls, allowing navigation in rough seas or in shallow river waters. The ships could be landed on " +
@@ -36,8 +36,8 @@ public class SynonymExtractor {
 				"picture of Vikings as noble savages began to take root in the 18th century, and this developed and " +
 				"became widely propagated during the 19th-century Viking revival. The received views of the Vikings " +
 				"as violent brutes or intrepid adventurers owe much to the modern Viking myth that had taken shape by " +
-				"the early 20th century. Current popular representations are typically highly clichéd, presenting the " +
-				"Vikings as familiar caricatures.";
+				"the early 20th century. Current popular representations are typically highly cliched, presenting the " +
+				"Vikings as familiar caricatures. They are very popular in movie and film";
 		
 		String POS = "NN";
 		
@@ -45,7 +45,8 @@ public class SynonymExtractor {
 		ArrayList<ArrayList<String>> res = model.getSynonyms(text, POS, 0.1);
 		
 		for (ArrayList<String> list : res) {
-			if (res.size()== 1) continue;
+			System.out.print("Synonimy: ");
+			if (res.size()== 0) continue;
 			for (String w : list) {
 				System.out.print(w+"; ");				
 			}
