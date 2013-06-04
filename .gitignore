@@ -19,3 +19,9 @@
 /SynomymExtractor/target/classes/model/POSTagger.class
 /SynomymExtractor/target/classes/model/SentenceDetector.class
 /SynomymExtractor/target/classes/model/Tokenizer.class
+*.class
+bin/*
+.idea
+.idea/*
+target
+target/*
