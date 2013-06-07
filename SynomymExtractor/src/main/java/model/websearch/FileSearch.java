@@ -23,7 +23,7 @@ public class FileSearch implements WebSearch {
 	public FileSearch(){
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("WebResults.txt"));
+			br = new BufferedReader(new FileReader("data/WebResults.txt"));
 			String line = new String();
 			while((line = br.readLine()) != null && !line.isEmpty()){
 				String word = line;
