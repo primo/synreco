@@ -49,14 +49,14 @@ public class PseuDocMetric {
         return new LinkedList<String>(output);
     }
 
-    /** Computes PseuDocSim metric for a given reference string and a list of synonym candidates.
+    /** Computes PseuDocSimilarity metric for a given reference string and a list of synonym candidates.
      *
      * @param reference the reference entity string the relation is checked against
      * @param synonymCandidates a collection of candidate synonyms
      * @param referencePseudodocs a collection of pseudo documents of clickUrls, the reference string caused a click to
      * @return
      */
-    public static List<PseuDocSim> dualIndex(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
+    public static List<PseuDocSimilarity> dualIndex(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
         final List<String> se = synonymCandidates;
         final List<String> de = referencePseudodocs;
 
@@ -123,7 +123,7 @@ public class PseuDocMetric {
 
         // Find the metrics
         /* Sim(e, s) := (|d|d∈D(e)∧CD[ind(s),ind(d)]=|s||)/|D(e)| */
-        List<PseuDocSim> ret = new LinkedList<PseuDocSim>();
+        List<PseuDocSimilarity> ret = new LinkedList<PseuDocSimilarity>();
         i = 0;
         final int deLen = de.size();
         for (String s : se) {
@@ -135,7 +135,7 @@ public class PseuDocMetric {
                 }
             }
             ++i;
-            ret.add( new PseuDocSim(reference, s, (float)matchedDocs / deLen));
+            ret.add( new PseuDocSimilarity(reference, s, (float)matchedDocs / deLen));
         }
         return ret;
     }
