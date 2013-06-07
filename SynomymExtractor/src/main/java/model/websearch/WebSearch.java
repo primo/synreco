@@ -1,9 +1,13 @@
 package model.websearch;
 
-import javafx.util.Pair;
 import java.util.Map;
 
 import java.util.List;
+
+class Link{
+	public String url;
+	public String desc;
+}
 
 /** Provides information of possible results of web search queries.
  */
@@ -25,5 +29,5 @@ public interface WebSearch {
      * @param query string to be look up in web search
      * @return map between query and list of resultant URLs and decriptions
      */
-    public Map<String,List<Pair<String,String>>> getLinksAndSummary(List<String> query);
+    public Map<String,List<Link>> getLinksAndSummary(List<String> query);
 }
