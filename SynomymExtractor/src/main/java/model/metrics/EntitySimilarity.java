@@ -7,12 +7,12 @@ package model.metrics;
  * Time: 5:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PseuDocSimilarity {
+public class EntitySimilarity {
     public final String reference;
     public final String candidate;
     public final float  similarity;
 
-    PseuDocSimilarity(String reference, String candidate, float similarity) {
+    EntitySimilarity(String reference, String candidate, float similarity) {
         this.reference = reference;
         this.candidate = candidate;
         this.similarity = similarity;

@@ -1,5 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
+import model.InputFilter;
+import opennlp.tools.postag.POSDictionary;
 import opennlp.tools.util.InvalidFormatException;
 import model.Model;
 import model.POSTagger;
@@ -11,55 +16,98 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import database.DBConnection;
 
 
 
 public class SynonymExtractor {
+    public final static String DEFAULT_POS = "NN";
+    public final static int DEFAULT_MIN_WORD_LENGTH = 3;
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+        // Understand the arguments
+        String POS = DEFAULT_POS;
+        int minWordLength = DEFAULT_MIN_WORD_LENGTH;
+
+        List<String> fileList = new ArrayList<String>();
+        for( int i = 0; i < args.length; ++i) {
+            switch (args[i].charAt(0)) {
+                case '-':
+                    if (args[i].length() < 2) {
+                        throw new IllegalArgumentException("Invalid argument: " + args[i]);
+                    }
+                    else if (args.length - 1 == i) {
+                        // Assuming that there is a space between -pos and the arg value
+                        throw  new IllegalArgumentException("Expected an argument after: " + args[i]);
+                    } else if (args[i].equalsIgnoreCase("--pos")) {
+                        POS = args[i+1];
+                    } else if(args[i].equalsIgnoreCase("--minLen")) {
+                        minWordLength = Integer.valueOf(args[i+1]);
+                    } else {
+                        throw new IllegalArgumentException("Invalid argument: " + args[i]);
+                    }
+                    break;
+                default:
+                    fileList.add(args[i]);
+                    break;
+            }
+        }
+
+        // TODO Validate the POS ?
+        List<List<String>> words = null;
+        try {
+            words = loadWords(fileList, POS, minWordLength);
+        } catch (IOException e) {
+            System.out.println("Failed opening input files.");
+            System.out.print(e);
+            return;
+        }
 		
-		String text = "The Vikings (from Old Norse vikingr) were seafaring north Germanic people who raided, " +
-				"traded, explored, and settled in wide areas of Europe, Asia, and the North Atlantic islands from the " +
-				"late 8th to the mid-11th centuries. The Vikings employed wooden longships with wide, shallow-draft " +
-				"hulls, allowing navigation in rough seas or in shallow river waters. The ships could be landed on " +
-				"beaches, and their light weight enabled them to be hauled over portages. These versatile ships " +
-				"allowed the Vikings to travel as far east as Constantinople and the Volga River in Russia, as far west " +
-				"as Iceland, Greenland, and Newfoundland, and as far south as Nekor. This period of Viking expansion, " +
-				"known as the Viking Age, constitutes an important element of the medieval history of Scandinavia, " +
-				"Great Britain, Ireland, Russia, and the rest of Europe.Popular conceptions of the Vikings often " +
-				"differ from the complex picture that emerges from archaeology and written sources. A romanticised " +
-				"picture of Vikings as noble savages began to take root in the 18th century, and this developed and " +
-				"became widely propagated during the 19th-century Viking revival. The received views of the Vikings " +
-				"as violent brutes or intrepid adventurers owe much to the modern Viking myth that had taken shape by " +
-				"the early 20th century. Current popular representations are typically highly cliched, presenting the " +
-				"Vikings as familiar caricatures. They are very popular in movie and film";
-		
-		String POS = "NN";
-		
-		Model model = new Model();
-		ArrayList<ArrayList<String>> res = model.getSynonyms(text, POS, 0.1);
-		
-		for (ArrayList<String> list : res) {
-			System.out.print("Synonimy: ");
-			if (res.size()== 0) continue;
-			for (String w : list) {
-				System.out.print(w+"; ");				
-			}
-			System.out.print("\n");
-		}
-		
-		//DBConnection connection  = new DBConnection();
-		//connection.open();
-		//System.out.print(connection.executeQueryAsString("SELECT ARE_SYNONYMS(\'film\',\'movie\')"));
-		//connection.close();
-		
-			//POSTagger.POSTag(Tokenizer.tokenize());
+//		Model model = new Model();
+//		ArrayList<ArrayList<String>> res = model.getSynonyms(text, POS, 0.1);
+//
+//		for (ArrayList<String> list : res) {
+//			System.out.print("Synonimy: ");
+//			if (res.size()== 0) continue;
+//			for (String w : list) {
+//				System.out.print(w+"; ");
+//			}
+//			System.out.print("\n");
+//		}
+
 
 	}
+
+    /** Loades the files, checks if the input was valid and then
+     * filters out words we are not interested in.
+     *
+     * It manages loading the files, validation is passed to a utility class.
+     *
+     * @param files filenames to load the input from
+     * @return list of
+     */
+    private static List<List<String>> loadWords(List<String> files, String pos, int wordMinLen) throws IOException {
+        InputFilter inputFilter = new InputFilter();
+        List<List<String>> output = new LinkedList<List<String>>();
+        for (String name : files) {
+            FileReader in = new FileReader(name);
+            BufferedReader r = new BufferedReader(in);
+            String input = "";
+            String line = null;
+            while((line=r.readLine()) != null) {
+                input += line;
+            }
+            List<List<String>> temp = inputFilter.filter(input, pos, wordMinLen);
+            output.addAll(temp);
+            }
+      return output;
+    }
+
 
 }

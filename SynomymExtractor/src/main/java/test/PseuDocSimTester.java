@@ -1,13 +1,13 @@
 package test;
 
 import model.metrics.PseuDocMetric;
-import model.metrics.PseuDocSimilarity;
+import model.metrics.EntitySimilarity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Performs simple test of PseuDocSimilarity metric implementation.
+ * Performs simple test of EntitySimilarity metric implementation.
  * Provides a small set of candidates and pseudocs.
  */
 public class PseuDocSimTester {
@@ -26,8 +26,8 @@ public class PseuDocSimTester {
         refPseuDocs.add("excel lowest prize");
         refPseuDocs.add("newest things in excel 2013 ms microsoft m$ spreadsheet");
 
-        List<PseuDocSimilarity> pseuDocSimilarities = PseuDocMetric.dualIndex(reference, synonymCandidates, refPseuDocs);
-        for (PseuDocSimilarity p : pseuDocSimilarities) {
+        List<EntitySimilarity> pseuDocSimilarities = PseuDocMetric.dualIndex(reference, synonymCandidates, refPseuDocs);
+        for (EntitySimilarity p : pseuDocSimilarities) {
             System.out.println(p.toString());
         }
 

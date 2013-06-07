@@ -13,7 +13,7 @@ public class SentenceDetector {
 	/**
 	 * @param args
 	 */
-	public static void printSentence() throws InvalidFormatException,
+	public static void main(String[] args) throws InvalidFormatException,
 	IOException {
 		String paragraph = "Hi. How are you? This is Mike.";
 
