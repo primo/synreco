@@ -26,7 +26,7 @@ public class PseuDocSimTester {
         refPseuDocs.add("excel lowest prize");
         refPseuDocs.add("newest things in excel 2013 ms microsoft m$ spreadsheet");
 
-        List<EntitySimilarity> pseuDocSimilarities = PseuDocMetric.dualIndex(reference, synonymCandidates, refPseuDocs);
+        List<EntitySimilarity> pseuDocSimilarities = PseuDocMetric.getSynonyms(reference, synonymCandidates, refPseuDocs);
         for (EntitySimilarity p : pseuDocSimilarities) {
             System.out.println(p.toString());
         }

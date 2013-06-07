@@ -20,20 +20,7 @@ public class PseuDocMetric {
     //public final String pseuDoc = "SELECT QUERY FROM "+logTable+" WHERE CLICKURL = ?";
     //public final String aux = "SELECT CLICKURL FROM" +logTable+" WHERE QUERY = ?";
 
-    /** TODO
-     * 1. Find set of the synonym candidates Se
-     * 2. Find the set of pseudocuments for the links clicked by the reference entity string
-     *
-     * dla zapytania referencyjnego re:
-     *  mamy zbiór kandydatów Se= List<String>
-     *  znajdujemy De czyli aux(re): select clickUrl where query = re --> SELECT
-     *
-
-     *
-     *
-     */
-
-    /** Reuturn only distinct tokens from the input string list.
+    /** Return only distinct tokens from the input string list.
      *
      * @param input
      * @return
@@ -51,12 +38,16 @@ public class PseuDocMetric {
 
     /** Computes EntitySimilarity metric for a given reference string and a list of synonym candidates.
      *
+     * Implements DualIndex method for PseuDocSim synonym similarity metric, as defined in:
+     * "A Framework for Robust Discovery of Entity Synonym" by Kaushik Chakrabarti, Surajit Chaudhuri, Tao Cheng, Dong Xin
+
+     *
      * @param reference the reference entity string the relation is checked against
      * @param synonymCandidates a collection of candidate synonyms
      * @param referencePseudodocs a collection of pseudo documents of clickUrls, the reference string caused a click to
      * @return
      */
-    public static List<EntitySimilarity> dualIndex(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
+    public static List<EntitySimilarity> getSynonyms(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
         final List<String> se = synonymCandidates;
         final List<String> de = referencePseudodocs;
 
