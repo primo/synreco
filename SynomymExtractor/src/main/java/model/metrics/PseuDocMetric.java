@@ -15,7 +15,7 @@ public class PseuDocMetric {
 
     // THis select should find all pseudo documents for links clicked by the reference query (entity string)
     public final String selectDForReferenceEntity = "SELECT QUERY FROM "+logTable+
-            "where clickUrl in ( SELECT clickUrl where query = ? )" ; // ? - reference entity string
+            "where clickUrl in ( SELECT clickUrl where query = ? ) group by clickUrl" ; // ? - reference entity string
 
     //public final String pseuDoc = "SELECT QUERY FROM "+logTable+" WHERE CLICKURL = ?";
     //public final String aux = "SELECT CLICKURL FROM" +logTable+" WHERE QUERY = ?";
@@ -38,7 +38,7 @@ public class PseuDocMetric {
      * @param input
      * @return
      */
-    public List<String> disTok(List<String> input) {
+    protected static List<String> disTok(List<String> input) {
         Set<String> output = new HashSet<String>();
         for (String s : input) {
             String[] tokens = s.split(" ");
@@ -56,7 +56,7 @@ public class PseuDocMetric {
      * @param referencePseudodocs a collection of pseudo documents of clickUrls, the reference string caused a click to
      * @return
      */
-    public List<PseuDocSim> dualIndex(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
+    public static List<PseuDocSim> dualIndex(String reference, List<String> synonymCandidates, List<String> referencePseudodocs) {
         final List<String> se = synonymCandidates;
         final List<String> de = referencePseudodocs;
 
@@ -92,7 +92,7 @@ public class PseuDocMetric {
             ++i;
         }
 
-        // TODO create CDMatrix using some efficient class
+        // FIXME create CDMatrix using more efficient class
         // Default initialization to 0 - making use of it
         int[][] cdmatrix = new int[se.size()][de.size()];
 
@@ -135,20 +135,9 @@ public class PseuDocMetric {
                 }
             }
             ++i;
-            ret.add( new PseuDocSim(reference, s, matchedDocs / deLen));
+            ret.add( new PseuDocSim(reference, s, (float)matchedDocs / deLen));
         }
         return ret;
     }
 } // PseuDocMetric class
 
-class PseuDocSim {
-    public final String reference;
-    public final String candidate;
-    public final float  similarity;
-
-    PseuDocSim(String reference, String candidate, float similarity) {
-        this.reference = reference;
-        this.candidate = candidate;
-        this.similarity = similarity;
-    }
-}
