@@ -10,9 +10,9 @@ package model.metrics;
 public class EntitySimilarity {
     public final String reference;
     public final String candidate;
-    public final float  similarity;
+    public final double  similarity;
 
-    EntitySimilarity(String reference, String candidate, float similarity) {
+    EntitySimilarity(String reference, String candidate, double similarity) {
         this.reference = reference;
         this.candidate = candidate;
         this.similarity = similarity;

@@ -126,7 +126,7 @@ public class PseuDocMetric {
                 }
             }
             ++i;
-            ret.add( new EntitySimilarity(reference, s, (float)matchedDocs / deLen));
+            ret.add( new EntitySimilarity(reference, s, (double)matchedDocs / deLen));
         }
         return ret;
     }
