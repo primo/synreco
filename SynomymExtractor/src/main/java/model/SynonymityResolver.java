@@ -22,7 +22,7 @@ public class SynonymityResolver {
         this.urls = urls;
     }
 
-    public List<Synonyms> discoverSynonyms(
+    public List<Synonym> discoverSynonyms(
             List<List<String>> input,
             Map<String, List<String>> candidates,
             double clickSimThreshold,
@@ -65,7 +65,7 @@ public class SynonymityResolver {
         }
 
         // Look for synonyms
-        List<Synonyms> output = new ArrayList<Synonyms>();
+        List<Synonym> output = new ArrayList<Synonym>();
         for (Entry<String, List<String>> e : candidates.entrySet()) {
             for (String candidate : e.getValue()) {
                 final String ref = e.getKey();
@@ -76,7 +76,7 @@ public class SynonymityResolver {
                 if ( clickSim >= clickSimThreshold && queryContextSim >= queryContextSimThreshold)
                 {
                     // e and candidate are synonyms
-                    output.add(new Synonyms(ref, candidate, clickSim, queryContextSim));
+                    output.add(new Synonym(ref, candidate, clickSim, queryContextSim));
                 }
             }
         }
@@ -99,17 +99,3 @@ class Metrics {
     }
 }
 
-class Synonyms {
-    public String word1;
-    public String word2;
-    public double clickSim;
-    public double queryContextSim;
-
-    Synonyms(String word1, String word2, double clickSim, double queryContextSim) {
-        this.word1 = word1;
-        this.word2 = word2;
-        this.clickSim = clickSim;
-        this.queryContextSim = queryContextSim;
-    }
-
-}
