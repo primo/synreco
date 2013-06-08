@@ -46,7 +46,7 @@ public class Candidates {
 	        	String a = group.get(i);
 		        for(int j=i+1;j<group.size();++j){
 		        	String b = group.get(j);
-		        	if(set.add(a+"#"+b)){
+		        	if(a!=b && set.add(a+"#"+b)){
 		        		List<String> tmp;
 		        		if(ret.containsKey(a))	tmp = ret.get(a);
 		        		else 		tmp = new ArrayList<String>();
