@@ -40,7 +40,7 @@ public class SynonymExtractor {
                         printHelp();
                     } else if (args[i].charAt(1) == '-') {
                         final String opt = args[i].substring(2);
-                        final String value = args[i+i];
+                        final String value = args[i+1];
                         ++i;
                         opts.put(opt,value);
                     } else {
