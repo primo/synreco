@@ -60,7 +60,7 @@ public class Candidates {
 		        }
 	        }
 	    }
-	    System.out.println("kandydatów: "+set.size());
+	    System.out.println("kandydatÃ³w: "+set.size());
 		return ret;
 	}
 }
