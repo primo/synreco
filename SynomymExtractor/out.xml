@@ -1,40 +1,34 @@
 <?xml version="1.0"?>
 <synonyms>
 	<synonym>
-		<word1>technique</word1>
-		<word2>zoom</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>zoom</word1>
-		<word2>megapixel</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>zoom</word1>
-		<word2>recognition</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>zoom</word1>
-		<word2>technique</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>judgement</word1>
-		<word2>ability</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2857142857142857</QueryContextSim>
+		<word1>engine</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.07692307692307693</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>tail</word1>
-		<word2>appearance</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.2</QueryContextSim>
+		<word2>relevance</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.07692307692307693</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>tail</word1>
+		<word2>example</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.02631578947368421</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>tail</word1>
+		<word2>matching</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.058823529411764705</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>tail</word1>
+		<word2>recall</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.06896551724137931</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>aspect</word1>
@@ -43,28 +37,82 @@
 		<QueryContextSim>0.25</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>knowledge</word1>
-		<word2>target</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word1>document</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.041666666666666664</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>relevance</word1>
+		<word2>tail</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.07692307692307693</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>notation</word1>
-		<word2>scope</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word2>classification</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>ability</word1>
-		<word2>judgement</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2857142857142857</QueryContextSim>
+		<word2>approach</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.09090909090909091</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>meaning</word1>
+		<word2>example</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.03225806451612903</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>relationship</word1>
-		<word2>strength</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.48</QueryContextSim>
+		<word2>click</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06818181818181818</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>relationship</word1>
+		<word2>recall</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.07317073170731707</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>relationship</word1>
+		<word2>step</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.0967741935483871</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>relationship</word1>
+		<word2>measure</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.07142857142857142</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>challenge</word1>
+		<word2>measure</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.07142857142857142</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>practice</word1>
+		<word2>result</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>respect</word1>
+		<word2>example</word2>
+		<ClickSim>0.65</ClickSim>
+		<QueryContextSim>0.029411764705882353</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>document</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.041666666666666664</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>coefficient</word1>
@@ -74,81 +122,417 @@
 	</synonym>
 	<synonym>
 		<word1>coefficient</word1>
+		<word2>work</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.03125</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>engine</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.07692307692307693</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>synonym</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.029850746268656716</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>entity</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.02564102564102564</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>example</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>result</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>analysis</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>precision</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.043478260869565216</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>reference</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.03225806451612903</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>threshold</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.05555555555555555</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>advantage</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.14285714285714285</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>approach</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1111111111111111</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>combination</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>framework</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>property</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>output</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.05</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
+		<word2>paper</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.09090909090909091</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>coefficient</word1>
 		<word2>purpose</word2>
 		<ClickSim>0.6</ClickSim>
 		<QueryContextSim>0.5</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>kiss</word1>
-		<word2>rebel</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2222222222222222</QueryContextSim>
+		<word1>coefficient</word1>
+		<word2>definition</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1111111111111111</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>rebel</word1>
-		<word2>kiss</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.2222222222222222</QueryContextSim>
+		<word1>synonym</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.029850746268656716</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>entity</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.02564102564102564</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>tail</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.02631578947368421</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>meaning</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.03225806451612903</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>respect</word2>
+		<ClickSim>0.65</ClickSim>
+		<QueryContextSim>0.029411764705882353</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>advantage</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.058823529411764705</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>purpose</word2>
+		<ClickSim>0.65</ClickSim>
+		<QueryContextSim>0.03333333333333333</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>advance</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.029411764705882353</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>approach</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.02702702702702703</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>item</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06451612903225806</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>example</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>result</word1>
+		<word2>practice</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>result</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.06666666666666667</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>measure</word1>
-		<word2>approach</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.23076923076923078</QueryContextSim>
+		<word2>challenge</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.07142857142857142</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>megapixel</word1>
-		<word2>zoom</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word1>measure</word1>
+		<word2>relationship</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.07142857142857142</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>analysis</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>precision</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.043478260869565216</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>strength</word1>
-		<word2>relationship</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.48</QueryContextSim>
+		<word2>recall</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.05714285714285714</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>effect</word1>
-		<word2>experiment</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
+		<word1>leverage</word1>
+		<word2>context</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.05263157894736842</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>reference</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.03225806451612903</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>threshold</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.05555555555555555</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>advantage</word1>
+		<word2>example</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.058823529411764705</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>advantage</word1>
+		<word2>purpose</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>advantage</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.14285714285714285</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>approach</word1>
-		<word2>measure</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.23076923076923078</QueryContextSim>
+		<word2>recall</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.034482758620689655</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>appearance</word1>
+		<word1>approach</word1>
+		<word2>direction</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>approach</word1>
+		<word2>ability</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.09090909090909091</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>approach</word1>
+		<word2>example</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.02702702702702703</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>approach</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1111111111111111</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>combination</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>click</word1>
+		<word2>relationship</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06818181818181818</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>framework</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>recall</word1>
+		<word2>approach</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.034482758620689655</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>recall</word1>
+		<word2>relationship</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.07317073170731707</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>recall</word1>
+		<word2>strength</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.05714285714285714</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>recall</word1>
+		<word2>step</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.0625</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>recall</word1>
 		<word2>tail</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.2</QueryContextSim>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.06896551724137931</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>appearance</word1>
-		<word2>advance</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
+		<word1>recall</word1>
+		<word2>spell</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>recognition</word1>
-		<word2>zoom</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>experiment</word1>
-		<word2>effect</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>scope</word1>
+		<word1>classification</word1>
 		<word2>notation</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>item</word1>
+		<word2>definition</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>item</word1>
+		<word2>example</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.06451612903225806</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>spell</word1>
+		<word2>recall</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>work</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.03125</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>property</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.04</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>matching</word1>
+		<word2>tail</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.058823529411764705</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>output</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.05</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>direction</word1>
+		<word2>approach</word2>
+		<ClickSim>0.55</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>paper</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.09090909090909091</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>purpose</word1>
+		<word2>example</word2>
+		<ClickSim>0.65</ClickSim>
+		<QueryContextSim>0.03333333333333333</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>purpose</word1>
+		<word2>advantage</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.16666666666666666</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>purpose</word1>
@@ -158,38 +542,38 @@
 	</synonym>
 	<synonym>
 		<word1>definition</word1>
-		<word2>advance</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.3</QueryContextSim>
+		<word2>item</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.1</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>target</word1>
-		<word2>user</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word1>definition</word1>
+		<word2>coefficient</word2>
+		<ClickSim>0.6</ClickSim>
+		<QueryContextSim>0.1111111111111111</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>target</word1>
-		<word2>knowledge</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word1>context</word1>
+		<word2>leverage</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.05263157894736842</QueryContextSim>
 	</synonym>
 	<synonym>
-		<word1>user</word1>
-		<word2>target</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.25</QueryContextSim>
+		<word1>step</word1>
+		<word2>relationship</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.0967741935483871</QueryContextSim>
+	</synonym>
+	<synonym>
+		<word1>step</word1>
+		<word2>recall</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.0625</QueryContextSim>
 	</synonym>
 	<synonym>
 		<word1>advance</word1>
-		<word2>definition</word2>
-		<ClickSim>0.45</ClickSim>
-		<QueryContextSim>0.3</QueryContextSim>
-	</synonym>
-	<synonym>
-		<word1>advance</word1>
-		<word2>appearance</word2>
-		<ClickSim>0.4</ClickSim>
-		<QueryContextSim>0.3333333333333333</QueryContextSim>
+		<word2>example</word2>
+		<ClickSim>0.5</ClickSim>
+		<QueryContextSim>0.029411764705882353</QueryContextSim>
 	</synonym>
 </synonyms>
