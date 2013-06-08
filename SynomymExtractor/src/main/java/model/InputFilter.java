@@ -57,7 +57,7 @@ public class InputFilter {
             for (int i = 0; i<tags.length; ++i) {
                 final String token = tokens[i];
                 if (tags[i].equals(pos) && token.length() >= wordMinLength) {
-                    currentValid.add(token);
+                    currentValid.add(token.toLowerCase());
                 }
             }
             output.add(currentValid);
