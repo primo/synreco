@@ -54,7 +54,7 @@ public class SynonymExtractor {
         }
 
         if (0 == fileList.size()) {
-            System.out.println("Specify input files !");
+            System.out.println("\nSpecify input files !");
             printHelp();
             return;
         }
@@ -75,7 +75,8 @@ public class SynonymExtractor {
             }
         }
         FileSearch fs = new FileSearch();
-        Map<String,List<String>> urls = fs.getLinks(new ArrayList<String>(words));
+        List<String> temp = new ArrayList<String>(words);
+        Map<String,List<String>> urls = fs.getLinks(temp);
         Map<String, List<String>> candidates = Candidates.generate(urls);
         SynonymityResolver sr = new SynonymityResolver(urls);
         List<Synonym> synonyms = sr.discoverSynonyms(
@@ -93,7 +94,7 @@ public class SynonymExtractor {
 	}
 
     private static void printHelp() {
-        System.out.println("Usage:");
+        System.out.println("\nUsage:");
         System.out.println("java SynonymExtractor [--opt Value] inputFile ... ");
         System.out.print("\nAvailable options:\n\t--help\t- prints this help message\n");
         System.out.print("\t--pos\t- specifies the part of speech we want to consider\n");
@@ -124,7 +125,7 @@ public class SynonymExtractor {
             }
             List<List<String>> temp = inputFilter.filter(input, pos, wordMinLen);
             output.addAll(temp);
-            }
+        }
       return output;
     }
 }
