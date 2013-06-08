@@ -51,6 +51,16 @@ public class SynonymityResolver {
                 temp = metrics.get(e.reference);
             }
             temp.put(e.candidate, new Metrics(e.similarity));
+
+            // QueryContext is symmetric - so we need to create also opposite relation object
+            // because it would not be created
+            if (!metrics.containsKey(e.candidate)) {
+                temp  = new HashMap<String, Metrics>();
+                metrics.put(e.candidate, temp);
+            } else {
+                temp = metrics.get(e.candidate);
+            }
+            temp.put(e.reference, new Metrics(e.similarity));
         }
         for (EntitySimilarity e: o2) {
             HashMap<String,Metrics> temp = null;
@@ -61,6 +71,13 @@ public class SynonymityResolver {
                 temp = metrics.get(e.reference);
             }
             Metrics m = temp.get(e.candidate);
+            if (null == m) {
+                // QContextSim = 0 so no synonym anyway
+                // TODO how could it happen
+
+                m = new Metrics();
+                temp.put(e.candidate, m);
+            }
             m.clickSim = e.similarity;
         }
 
@@ -88,6 +105,8 @@ public class SynonymityResolver {
 class Metrics {
     public double clickSim;
     public double queryContextSim;
+
+    public Metrics(){}
 
     public Metrics(double queryContextSim){
         this.queryContextSim = queryContextSim;
