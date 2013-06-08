@@ -118,12 +118,13 @@ public class SynonymExtractor {
         for (String name : files) {
             FileReader in = new FileReader(name);
             BufferedReader r = new BufferedReader(in);
-            String input = "";
+            StringBuilder input = new StringBuilder();
             String line = null;
             while((line=r.readLine()) != null) {
-                input += line;
+                input.append(' ');
+                input.append(line);
             }
-            List<List<String>> temp = inputFilter.filter(input, pos, wordMinLen);
+            List<List<String>> temp = inputFilter.filter(input.toString(), pos, wordMinLen);
             output.addAll(temp);
         }
       return output;
