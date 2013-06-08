@@ -2,17 +2,28 @@ package model.metrics;
 
 import java.util.*;
 
-/**
+/** Calaculates QueryContextSim metric of synonym relation.
  */
 public class ContextSimilarity {
 
+    // Size of the word surrounding considered its context
     public static final int DEFAULT_CONTEXT_RADIUS = 2;
 
+    /** Calculates similarity of every pair of words in given text using QueryContextSimilarity.
+     *
+     * @param text Input text, a list o sentences, modeled as a list of string
+     * @return List of similarity descriptions
+     */
     public List<EntitySimilarity> getSynonyms (List<List<String>> text) {
         return getSynonyms(text, DEFAULT_CONTEXT_RADIUS);
     }
 
-
+    /** Calculates similarity of every pair of words in given text using QueryContextSimilarity.
+     *
+     * @param text Input text, a list o sentences, modeled as a list of string
+     * @param contextRadius  Size of the word surrounding considered its context
+     * @return List of similarity descriptions
+     */
     public List<EntitySimilarity> getSynonyms (List<List<String>> text, final int contextRadius) {
         HashMap<String, HashSet<String>> contextMap = new HashMap<String, HashSet<String>>();
 

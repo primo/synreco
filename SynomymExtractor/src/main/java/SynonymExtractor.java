@@ -7,7 +7,14 @@ import model.websearch.FileSearch;
 
 import java.util.*;
 
-
+/** Main class of the synonym discovery tool.
+ * It tries to rank similarity of possible synonyms using two metrics:
+ * - QueryContextSim,
+ * - ClickSim,
+ * that are described in:
+ * "A Framework for Robust Discovery of Entity Synonym"
+ * by Kaushik Chakrabarti, Surajit Chaudhuri, Tao Cheng, Dong Xin
+ */
 public class SynonymExtractor {
     public final static String DEFAULT_POS = "NN";
     public final static int DEFAULT_MIN_WORD_LENGTH = 3;
@@ -15,8 +22,10 @@ public class SynonymExtractor {
     public final static double DEFAULT_QUERY_CONTXEXT_SIM_THRESHOLD = 0.5;
     public final static String DEFAULT_OUTPUT_FILENAME = "out.xml";
 
-    /**
-     * @param args
+    /** The main method of the program.
+     * It parses commandline parameters and orchestrates the synonym discovery process.
+     *
+     * @param args Commandline parametrs
      */
 	public static void main(String[] args) {
         // Parse the arguments
@@ -97,8 +106,8 @@ public class SynonymExtractor {
         System.out.println("\nUsage:");
         System.out.println("java SynonymExtractor [--opt Value] inputFile ... ");
         System.out.print("\nAvailable options:\n\t--help\t- prints this help message\n");
-        System.out.print("\t--pos\t- specifies the part of speech we want to consider\n");
-        System.out.print("\t--output\t- Output file in xml format containg the discovered synonyms\n");
+        System.out.print("\t--pos\t- specifies the part of speech we want to consider. Possible values as in Opennlp framework, e.g. NN\n");
+        System.out.print("\t--output\t- Output file in xml format containing the discovered synonyms\n");
         System.out.print("\t--minWordLength\t- minimal length of word selected for synonym discovery\n");
         System.out.print("\t--clickSimThreshold\t- threshold for ClickSim metric\n");
         System.out.print("\t--qContextSimThreshold\t- threshold for QueryContextSim metric\n\n");

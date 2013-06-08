@@ -4,8 +4,6 @@ import java.util.*;
 
 /** Calculates the ClickSim synonym similarity metric for a reference entity and
  * a set of candidates for synonyms.
- *
- *
  */
 public class ClickSim {
 
