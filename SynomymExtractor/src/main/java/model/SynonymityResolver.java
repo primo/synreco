@@ -71,13 +71,6 @@ public class SynonymityResolver {
                 temp = metrics.get(e.reference);
             }
             Metrics m = temp.get(e.candidate);
-            if (null == m) {
-                // QContextSim = 0 so no synonym anyway
-                // TODO how could it happen
-
-                m = new Metrics();
-                temp.put(e.candidate, m);
-            }
             m.clickSim = e.similarity;
         }
 
