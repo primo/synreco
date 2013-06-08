@@ -25,15 +25,15 @@ public class ClickSim {
         HashMap<Integer, String> candidatesIds = new HashMap<Integer, String>();
         // Inverted index on URLs: URL -> candidates that clicked on it
         HashMap<String, List<Integer>> urlIndex = new LinkedHashMap<String, List<Integer>>();
-        Iterator it = candidates.entrySet().iterator();
         int freeCandidateId = 0;
 
         // Create the indexes
+        Iterator it = candidates.entrySet().iterator();
         while(it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             // Create mapping between the candidate and assigned numerical ID
             final int id = freeCandidateId++;
-            candidatesIds.put(Integer.valueOf(id), (String) pair.getKey());
+            candidatesIds.put(id, (String) pair.getKey());
             // Update the inverted index
             for( String s: (List<String>)pair.getValue()) {
                 List<Integer> candList = null;
@@ -47,22 +47,25 @@ public class ClickSim {
         }
 
         // Calculate the coverage of reference links
-        int[] coverage = new int[candidates.size()];
+        ArrayList<Integer> coverage = new ArrayList<Integer>(candidates.size());
+        for(int i = 0; i < candidates.size(); ++i) {
+            coverage.add(0);
+        }
         for (String r : refUrls) {
             List<Integer> candList = urlIndex.get(r);
             if (null == candList) {
                 continue;
             }
             for (int id : candList) {
-                coverage[id]++;
+                coverage.set(id, coverage.get(id));
             }
         }
 
         List<EntitySimilarity> output = new ArrayList<EntitySimilarity>();
         final double refLinksSum = refUrls.size();
-        for (int i = 0; i < coverage.length; ++i) {
+        for (int i = 0; i < coverage.size(); ++i) {
             final String candidate = candidatesIds.get(i);
-            final double sim = (double)coverage[i] / refLinksSum;
+            final double sim = ((double)coverage.get(i)) / refLinksSum;
             EntitySimilarity e = new EntitySimilarity(referenceString, candidate, sim);
             output.add(e);
         }
