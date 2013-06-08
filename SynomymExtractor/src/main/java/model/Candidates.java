@@ -38,7 +38,7 @@ public class Candidates {
 	        Map.Entry pairs = (Map.Entry)it.next();
 	        String word = pairs.getKey().toString();
 	        List<String> group = pivot.get(word);
-	        if(group.size()>urls.size()/2){
+	        if(group.size()>urls.size()/5){
 	        	System.out.println(word+" = "+group.size());
 	        	continue;
 	        }

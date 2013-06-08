@@ -34,6 +34,7 @@ public class ClickSim {
             // Create mapping between the candidate and assigned numerical ID
             final int id = freeCandidateId++;
             candidatesIds.put(id, (String) pair.getKey());
+
             // Update the inverted index
             for( String s: (List<String>)pair.getValue()) {
                 List<Integer> candList = null;
@@ -57,7 +58,7 @@ public class ClickSim {
                 continue;
             }
             for (int id : candList) {
-                coverage.set(id, coverage.get(id));
+                coverage.set(id, coverage.get(id)+1);
             }
         }
 
