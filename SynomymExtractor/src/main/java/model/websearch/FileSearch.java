@@ -5,13 +5,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
 
 class EntinyJ {
-	public String url;
+	public String domain;
 	public String kwic;
 };
 class ResultJ {
@@ -23,7 +24,7 @@ public class FileSearch implements WebSearch {
 	public FileSearch(){
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("data/WebResults.txt"));
+			br = new BufferedReader(new FileReader("WebResults.txt"));
 			String line = new String();
 			while((line = br.readLine()) != null && !line.isEmpty()){
 				String word = line;
@@ -34,7 +35,7 @@ public class FileSearch implements WebSearch {
 				List<Link> list = new ArrayList<Link>();
 				for(EntinyJ item : ret.results ){
 					Link l = new Link();
-					l.url = item.url;
+					l.url = item.domain;
 					l.desc = item.kwic;
 					list.add(l);
 //					System.out.println(item.url+" "+ item.kwic);
@@ -60,6 +61,21 @@ public class FileSearch implements WebSearch {
 			}else{
 				ret.put(item, new ArrayList<String>());
 			}
+		}
+		return ret;
+	}
+	
+	public Map<String, List<String>> getAllLinks() {
+		Map<String, List<String>> ret = new HashMap<String, List<String>>();
+	    Iterator it = words.entrySet().iterator();
+	    while (it.hasNext()) {
+	        Map.Entry pairs = (Map.Entry)it.next();
+	        String item = pairs.getKey().toString();
+			List<String> val = new ArrayList<String>();
+			for(Link link : words.get(item) ){
+				val.add(link.url);
+			}
+			ret.put(item, val);
 		}
 		return ret;
 	}
