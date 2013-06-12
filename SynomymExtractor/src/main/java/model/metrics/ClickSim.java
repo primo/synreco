@@ -22,7 +22,9 @@ public class ClickSim {
         // Mapping between candidate id and its full form
         HashMap<Integer, String> candidatesIds = new HashMap<Integer, String>();
         // Inverted index on URLs: URL -> candidates that clicked on it
-        HashMap<String, List<Integer>> urlIndex = new LinkedHashMap<String, List<Integer>>();
+        // We ignore multiple occurences of one linke among candidate's click therefore we
+        // used a Set
+        HashMap<String, Set<Integer>> urlIndex = new LinkedHashMap<String, Set<Integer>>();
         int freeCandidateId = 0;
 
         // Create the indexes
@@ -35,9 +37,9 @@ public class ClickSim {
 
             // Update the inverted index
             for( String s: (List<String>)pair.getValue()) {
-                List<Integer> candList = null;
+                Set<Integer> candList = null;
                 if (urlIndex.get(s) == null) {
-                    candList = new ArrayList<Integer>();
+                    candList = new TreeSet<Integer>();
                     urlIndex.put(s, candList);
                 }
                 candList = urlIndex.get(s);
@@ -51,7 +53,7 @@ public class ClickSim {
             coverage.add(0);
         }
         for (String r : refUrls) {
-            List<Integer> candList = urlIndex.get(r);
+            Set<Integer> candList = urlIndex.get(r);
             if (null == candList) {
                 continue;
             }
@@ -65,6 +67,7 @@ public class ClickSim {
         for (int i = 0; i < coverage.size(); ++i) {
             final String candidate = candidatesIds.get(i);
             final double sim = ((double)coverage.get(i)) / refLinksSum;
+            assert sim <= 0;
             EntitySimilarity e = new EntitySimilarity(referenceString, candidate, sim);
             output.add(e);
         }
