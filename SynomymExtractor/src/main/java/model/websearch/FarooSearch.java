@@ -59,12 +59,15 @@ public class FarooSearch implements WebSearch {
 			if(!words.containsKey(item)){
 				List<Link> val = farooQuery(item);
 				words.put(item, val);
+                val=null;
 			}
 			List<String> val = new ArrayList<String>();
 			for(Link link : words.get(item) ){
 				val.add(link.url);
+
 			}
 			ret.put(item, val);
+            val = null;
 		}
 		return ret;
 	}
@@ -74,6 +77,7 @@ public class FarooSearch implements WebSearch {
 			if(!words.containsKey(item)){
 				List<Link> val = farooQuery(item);
 				words.put(item, val);
+                val = null;
 			}
 			ret.put(item, words.get(item));
 		}
