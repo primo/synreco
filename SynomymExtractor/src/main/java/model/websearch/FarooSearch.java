@@ -22,6 +22,7 @@ public class FarooSearch implements WebSearch {
 	    String google = "http://www.faroo.com/api?start=1&length=20&l=en&src=web&i=false&f=json&q=";
 	    String charset = "UTF-8";
 	    List<Link> ret = new ArrayList<Link>();
+
 		try {
 		    URL url;
 			url = new URL(google + URLEncoder.encode(search, charset));
@@ -52,7 +53,8 @@ public class FarooSearch implements WebSearch {
 	
 	
 	public Map<String, List<String>> getLinks(List<String> query) {
-		Map<String, List<String>> ret = new HashMap<String, List<String>>();
+		System.out.println("Getting links from Faroo Search Engine..");
+        Map<String, List<String>> ret = new HashMap<String, List<String>>();
 		for(String item : query ){
 			if(!words.containsKey(item)){
 				List<Link> val = farooQuery(item);

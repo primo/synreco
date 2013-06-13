@@ -21,16 +21,14 @@ class ResultJ {
 
 public class FileSearch implements WebSearch {
 	Map<String, List<Link>> words = new HashMap<String, List<Link>>();
-	public FileSearch(){
+	public FileSearch(String file){
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("data/WebResults.txt"));
+			br = new BufferedReader(new FileReader(file));
 			String line = new String();
 			while((line = br.readLine()) != null && !line.isEmpty()){
 				String word = line;
-//				System.out.println(word);
 				String result = br.readLine();
-//				System.out.println(result);
 				ResultJ ret = new Gson().fromJson(result, ResultJ.class);
 				List<Link> list = new ArrayList<Link>();
 				for(EntinyJ item : ret.results ){
@@ -38,7 +36,6 @@ public class FileSearch implements WebSearch {
 					l.url = item.domain;
 					l.desc = item.kwic;
 					list.add(l);
-//					System.out.println(item.url+" "+ item.kwic);
 				}
 				words.put(word, list);
 			}
@@ -50,7 +47,8 @@ public class FileSearch implements WebSearch {
 	}
 	
 	public Map<String, List<String>> getLinks(List<String> query) {
-		Map<String, List<String>> ret = new HashMap<String, List<String>>();
+        System.out.println("Getting links from provided text file..");
+        Map<String, List<String>> ret = new HashMap<String, List<String>>();
 		for(String item : query ){
 			if(words.containsKey(item)){
 				List<String> val = new ArrayList<String>();

@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.*;
-import model.websearch.FileSearch;
+import model.websearch.*;
 
 import java.util.*;
 
@@ -34,6 +34,7 @@ public class SynonymExtractor {
         opts.put("minWordLength",String.valueOf(DEFAULT_MIN_WORD_LENGTH));
         opts.put("clickSimThreshold", String.valueOf(DEFAULT_CLICK_SIM_THRESHOLD));
         opts.put("qContextSimThreshold",String.valueOf(DEFAULT_QUERY_CONTXEXT_SIM_THRESHOLD));
+        opts.put("useFileSearch", null);
         opts.put("output",DEFAULT_OUTPUT_FILENAME);
 
         List<String> fileList = new ArrayList<String>();
@@ -83,7 +84,9 @@ public class SynonymExtractor {
                 words.add(s);
             }
         }
-        FileSearch fs = new FileSearch();
+        String file = opts.get("useFileSearch") ;
+        WebSearch fs = null;
+        fs = file == null ? new FarooSearch() : new FileSearch(file);
         List<String> temp = new ArrayList<String>(words);
         Map<String,List<String>> urls = fs.getLinks(temp);
         Map<String, List<String>> candidates = Candidates.generate(urls);
@@ -111,6 +114,7 @@ public class SynonymExtractor {
         System.out.print("\t--minWordLength\t- minimal length of word selected for synonym discovery\n");
         System.out.print("\t--clickSimThreshold\t- threshold for ClickSim metric\n");
         System.out.print("\t--qContextSimThreshold\t- threshold for QueryContextSim metric\n\n");
+        System.out.print("\t--useFileSearch\t- optional URL log to use instead of Web Search\n\n");
     }
 
     /** Loades the files, checks if the input was valid and then

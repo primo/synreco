@@ -3,14 +3,14 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/utility" isTestSource="false" packagePrefix="model" />
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/opennlp-tools-1.5.0/opennlp-tools-1.5.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../opennlp-tools-1.5.0/opennlp-tools-1.5.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
